@@ -1,11 +1,167 @@
-Background: AI has demonstrated superior diagnostic accuracy compared to medical practitioners, highlighting its growing importance in healthcare. SMART-Pred (Shiny Multi-Algorithm R Tool for Predictive Modeling) is an innovative AI-based application for Alzheimer's disease (AD) prediction using handwriting analysis. 
+<!-- PROJECT LOGO -->
+<h1 align="center">Basic SMART-pred</h1>
 
-Objective: To develop and evaluate a non-invasive, cost-effective AI tool for early AD detection, addressing the need for accessible and accurate screening methods. 
+  <p align="center">
+    SMART-pred is an interactive web application built with R Shiny that provides a comprehensive and customized machine-learning and deep-learning pipeline for classification and regression tasks. 
+    <br />
+    <a href="https://github.com/whan4/Basic-SMART-pred"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/whan4/Basic-SMART-pred/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/whan4/Basic-SMART-pred/issues">Request Feature</a>
+  </p>
+</div>
 
-Methods: The study employed Principal Component Analysis (PCA) for dimensionality reduction of handwriting data, followed by training and evaluation of ten diverse AI models, including logistic regression, Naïve Bayes, random forest, AdaBoost, Support Vector Machine (SVM), and neural network. Model performance was assessed using accuracy, sensitivity, specificity, F1-score, and ROC-AUC metrics. The DARWIN dataset, comprising handwriting samples from 174 participants (89 AD patients, 85 healthy controls) was used for validation.
 
-Results: The Neural Network classifier achieved an accuracy of 91% with a 95% CI ranging from 0.79-0.97 and an AUC of 92%, on the test set after identifying the most significant features for AD prediction. These results surpass current clinical diagnostic tools, which typically achieve around 81% accuracy. SMART-Pred's performance aligns with recent AI advancements in AD prediction, such as the Cambridge scientists' AI tool achieving 82% accuracy in identifying AD progression within three years using cognitive tests and MRI scans. The variables "air_time" and "paper_time" consistently emerged as critical predictors for AD across all ten AI models, highlighting their potential importance in early detection and risk assessment. To augment transparency and interpretability, we incorporated the principles of explainable AI, specifically using SHapley Additive exPlanations (SHAP) values—a state-of-the-art method to emphasize the features responsible for our model’s efficacy.
 
-Conclusions: SMART-Pred offers non-invasive, cost-effective, and efficient AD prediction, demonstrating the transformative potential of AI in healthcare. While clinical validation is necessary to confirm the practical applicability of the identified key variables, this study contributes to the growing body of research on AI-assisted AD diagnosis and may lead to improved patient outcomes through early detection and intervention. 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Keywords: Artificial Intelligence (AI); SMART-Pred (Shiny Multi-Algorithm R Tool for Predictive Modeling); Machine Learning (ML); Alzheimer’s Disease (AD); Predictive Modeling; Classification Algorithms; Disease Diagnostics and Surveillance.
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+The application offers an intuitive interface for data analysis, model training, and performance evaluation. At the same time, an R markdown pipeline version is also provided for developers to conduct customized analysis. The design of this software aims to enable talented researchers without programming expertise to fully leverage these powerful analytical methods.This repository is just a _**demo version**_. If you would like more features and a complete version of the app, please contact us.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To install this software, please follow the steps below.
+
+### Prerequisites
+
+R (version 4.4.0) and R Studio software(Strongly Recommend).
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/whan4/Basic-SMART-pred.git
+   ```
+2. Open R project by clicking on R.Rprofile
+3. Restore R packages by renv.lock
+   ```r
+   renv::restore()
+   ```
+4. Install dependencies
+   ```r
+   install.packages("shiny", "rmarkdown")
+   ```
+5. Every time you run the app, the software will perform a self-check. If additional packages are needed, select 'y' to install them.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### R Shiny Web Application
+
+1. Open R and set working directory
+2. Launch the app
+```r
+library(shiny)  
+runApp('./app')
+```
+### R markdown pipeline
+
+If you want to reproduce the result in our paper, please load _**partial_air_paper_pca_results**_, _**full_varimp_results.rds**_, _**full_pca_results.rds**_ and run specific code block of _**pipeline.Rmd**_ to get the specific result.
+
+1. Open R and set working directory
+2. Run the whole pipeline or specific code block
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the project_license. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+### [Samuel Kakraba, PhD.](https://sph.tulane.edu/bios/samuel-kakraba), led supervisor
+
+- 1440 Canal St, New Orleans, LA 70112, USA
+
+- Tel: +1-504-988-2475
+
+- Email: [samuel.kakraba@tulane.edu](samuel.kakraba@tulane.edu) 
+
+### [Sudesh Srivastav, PhD.](https://sph.tulane.edu/bios/sudesh-srivastav)
+
+- 1440 Canal St, New Orleans, LA 70112, USA
+
+- Tel: +1-504-988-2472
+
+- Email: [ssrivas@tulane.edu](ssrivas@tulane.edu) 
+
+Project Link: [https://github.com/whan4/Basic-SMART-pred](https://github.com/whan4/Basic-SMART-pred)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Contributors
+* Han Wenzheng,Department of Biostatistics and Data Science, Celia Scott Weatherhead School of Public Health and Tropical Medicine at Tulane University, New Orleans, LA, USA
+* [Edmund F. Agyemang, PhD(Student), Department of Biostatistics and Data Science, Celia Scott Weatherhead School of Public Health and Tropical Medicine at Tulane University, New Orleans, LA, USA
+*[Samuel Kakraba, PhD.](https://sph.tulane.edu/bios/samuel-kakraba), Assistant Professor, Department of Biostatistics and Data Science, Celia Scott Weatherhead School of Public Health and Tropical Medicine at Tulane University, New Orleans, LA, USA
+* [Sudesh Srivastav, PhD.](https://sph.tulane.edu/bios/sudesh-srivastav), Professor,Department of Biostatistics and Data Science, Celia Scott Weatherhead School of Public Health and Tropical Medicine at Tulane University, New Orleans, LA, USA
+*[Prof. Jeffery G. Shaffer, PhD.](https://sph.tulane.edu/bios/jeffrey-shaffer), Associate Professor, Department of Biostatistics and Data Science, Celia Scott Weatherhead School of Public Health and Tropical Medicine at Tulane University, New Orleans, LA, USA
+
+## Acknowledgments  
+
+* [Shiny Framework](https://shiny.posit.co/)
+* [Caret R package](https://github.com/topepo/caret)  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
